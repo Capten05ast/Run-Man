@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: red;
+    overflow:hidden;
+}
+
+.gameContainer {
+    /* background-color: bisque; */
+    background-image: url(back.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    width: 100%;
+    height: 100vh;
+    position:relative
+}
+
+.gameOver {
+    position: relative;
+    visibility: visible;
+
+    font:bolder;
+    -webkit-text-stroke: 1px black;
+
+    top: 63px;
+    font-size: 70px;
+    text-align: center;
+    color: white;
+    font-family: "Anta";
+    font:bold;
+}
+
+.dino {
+    background-image: url(ero.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* 
+    background-size: contain;
+    bcoz image was too big for screen so for fitting it inside
+    */
+    width: 180px;
+    height: 190px;
+    background-image: 80%;
+    position: absolute;
+    bottom:80px;
+    left:15%;
+    /* 
+    bottom: 0;
+    left: 12px
+    position: relative;
+
+    so that position of runman will be relative and bottom 
+    to the background screen. Relative to parent position.
+    */
+}
+
+.obstacle {
+    background-image: url(munster.png);
+    background-repeat: no-repeat;
+    background-size: 102%;
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    bottom:92px;
+    left: 60%;
+}
+
+.obstacleAni {
+    animation: obstacleAni 2s linear infinite;
+}
+
+
+.animateDino {
+    animation: dino 1s linear;
+    /* 
+        name of animation is dino
+    */
+}
+
+@keyframes dino {
+    0% {
+        bottom: 80px;
+    }
+    50% {
+        bottom: 490px;
+    } 
+    100% {
+        bottom: 80px;
+    }
+}
+
+
+@keyframes obstacleAni {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+.droping {
+    animation: drop 5s linear;
+}
+
+@keyframes drop {
+    0% {
+        bottom: 80px;
+    }
+    10% {
+        bottom: 150px;
+    }
+    60% {
+        bottom: -40%;
+    }
+    80% {
+        bottom: -55%;
+    }
+    100% {
+        top: -70%;
+    }
+}
+
+/* 
+but at bottom of web page we can see horizontal scrollbar
+which should be removed.
+so just use in body overflow : hidden.
+*/
+
+#scoreCount {
+    position: absolute;
+    left: 82%;
+    top: 5px;
+    color:azure;
+    font-size: 30px;
+    border: 2px solid black;
+    padding: 10px;
+    font-family: "Anta";
+    width: 180px;
+    background-color: black;
+    border-radius: 20px;
+}
